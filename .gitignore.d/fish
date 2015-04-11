@@ -1,0 +1,14 @@
+*
+!/.config
+!/.config/fish
+!/.config/fish/completions
+!/.config/fish/completions/*
+!/.config/fish/config.fish
+!/.config/fish/functions
+!/.config/fish/functions/*
+!/.config/fish/includes
+!/.config/fish/includes/*
+!/.gitignore.d
+!/.gitignore.d/fish
+
+.config/fish/includes/private-alias.fish
