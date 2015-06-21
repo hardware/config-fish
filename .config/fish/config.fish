@@ -57,6 +57,7 @@ alias digr='dig +short -x'
 alias digt='dig +nocmd +noall +answer'
 alias diga='dig +noauthority +noquestion +noadditional +nostats'
 alias shred='shred -fuzv'
+alias bitcoin='bitcoin-cli --datadir="/data/bitcoin"'
 
 # SSH Servers
 . $HOME/.config/fish/includes/private-alias.fish
