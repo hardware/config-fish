@@ -51,7 +51,7 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 alias cls='echo -ne "\033c"'
-alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias myip='dig o-o.myaddr.l.google.com @ns1.google.com txt +short | sed -e \'2d;s/"//g\''
 alias pgmodeler='/opt/pgmodeler/start.sh &'
 alias reboot='systemctl reboot'
 alias poweroff='systemctl poweroff'
@@ -66,6 +66,9 @@ alias digt='dig +nocmd +noall +answer'
 alias diga='dig +noauthority +noquestion +noadditional +nostats'
 alias shred='shred -fuzv'
 alias bitcoin='bitcoin-cli --datadir="/data/bitcoin"'
+alias bitcoin-stop="bitcoin stop ; systemctl stop bitcoind"
+alias dashcoin='dash-cli --datadir="/data/dashcoin"'
+alias getas='whois -h whois.radb.net'
 
 # SSH Servers
 . $HOME/.config/fish/includes/private-alias.fish
