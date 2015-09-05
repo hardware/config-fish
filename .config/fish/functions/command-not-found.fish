@@ -1,10 +1,9 @@
-function command-not-found
-        set cmd $argv[2]
-        set pkgs (pkgfile -b -v $argv 2>/dev/null)
-        if test -n $pkgs
-                echo "$cmd may be found in the following packages:"
-                echo "$pkgs"
-                return 0
+function __fish_command_not_found_handler --on-event fish_command_not_found
+        set -l __packages (pkgfile --binaries --verbose -- $argv ^/dev/null)
+        if test $status -eq 0
+                printf "%s may be found in the following packages:\n" "$argv"
+                printf "  %s\n" $__packages
+        else
+                __fish_default_command_not_found_handler $argv
         end
-        return 127
 end

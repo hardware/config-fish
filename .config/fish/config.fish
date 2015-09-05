@@ -1,22 +1,22 @@
 # Path to your oh-my-fish.
-set fish_path $HOME/.oh-my-fish
+set -g OMF_PATH $HOME/.local/share/omf
+
+# Path to your oh-my-fish configuration.
+set -g OMF_CONFIG $HOME/.config/omf
+
+### Configuration required to load oh-my-fish ###
+# Note: Only add configurations that are required to be set before oh-my-fish is loaded.
+# For common configurations, we advise you to add them to your $OMF_CONFIG/init.fish file or
+# to create a custom plugin instead.
+
+# Load oh-my-fish configuration.
+source $OMF_PATH/init.fish
 
 # Theme
 set fish_theme agnoster
-
-# All built-in plugins can be found at ~/.oh-my-fish/plugins/
-# Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-# Enable plugins by adding their name separated by a space to the line below.
-set fish_plugins theme
-
-# Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
-
-# set fish_function_path $fish_function_path "/usr/lib/python3.4/site-packages/powerline/bindings/fish/"
-# . powerline-setup.fish
-
 set -g theme_display_user yes
 # set -g default_user hardware
+set --erase fish_greeting
 
 set -x EDITOR "vim"
 set -x VISUAL "vim"
@@ -24,15 +24,7 @@ set -x PAGER "less -r"
 set -x TERM xterm-256color
 set -x LC_ALL en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
-set -x PATH $PATH $HOME/bin $HOME/.gem/ruby/2.2.0/bin
-
-set -xU LESS_TERMCAP_mb (printf "\e[01;31m")      # begin blinking
-set -xU LESS_TERMCAP_md (printf "\e[01;31m")      # begin bold
-set -xU LESS_TERMCAP_me (printf "\e[0m")          # end mode
-set -xU LESS_TERMCAP_se (printf "\e[0m")          # end standout-mode
-set -xU LESS_TERMCAP_so (printf "\e[01;44;33m")   # begin standout-mode - info box
-set -xU LESS_TERMCAP_ue (printf "\e[0m")          # end underline
-set -xU LESS_TERMCAP_us (printf "\e[01;32m")      # begin underline
+set -x PATH $PATH $HOME/.gem/ruby/2.2.0/bin
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto -lh'
@@ -71,4 +63,4 @@ alias dashcoin='dash-cli --datadir="/data/dashcoin"'
 alias getas='whois -h whois.radb.net'
 
 # SSH Servers
-. $HOME/.config/fish/includes/private-alias.fish
+source $HOME/.config/fish/includes/private-alias.fish
